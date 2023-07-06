@@ -16,17 +16,6 @@ def simplify_onnx(model: onnx.ModelProto, save_path: str) -> onnx.ModelProto:
     return model_opt
 
 
-def get_supported_operations(config: str) -> Tuple[bool, List]:
-
-    if not os.path.exists(config):
-        print(f"{style_error()} Config file not found.")
-        return False, []
-    with open(config, 'r') as f:
-        data = json.load(f)
-        support_ops = data['ops']
-    return True, support_ops
-
-
 if __name__ == "__main__":
     model = load_onnx("../../models/resnet18.onnx")
     simplify_onnx(model, "../../models/resnet18.onnx")
