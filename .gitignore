@@ -1,0 +1,4 @@
+*.pyc
+models/*
+!models/export_resnet18.py
+!models/export_lstm.py

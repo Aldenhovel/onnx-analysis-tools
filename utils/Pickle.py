@@ -26,8 +26,9 @@ def check_pkl(file_path):
                     print(f"\t{kk}: {vv}")
                 else:
                     print(f"\t{kk}: {type(vv)}")
+    else:
+        print(f"Expect pkl root data: collections.OrderedDict or Dict, got {type(data)}")
 
-    dd = data.items()
 
 if __name__ == "__main__":
     def plus_one(num):
